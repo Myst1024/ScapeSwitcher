@@ -2,17 +2,7 @@
 
 Background C# agent that monitors Fractal Scape dongle HID state and switches the default Windows audio output when the headset connects.
 
-## Current status
-
-Initial scaffold is implemented based on constants extracted from Fractal Adjust bundle:
-
-- Vendor ID: `14012`
-- Dongle Product ID: `1`
-- HID report ID: `2`
-- Dongle factory command bytes: `[17, 33]`
-- Headset connected flag: response byte index `3` equals `1`
-
-Behavior:
+## Behavior:
 
 - When headset connects, app switches Windows default render endpoint to the dongle endpoint.
 - Before switching, app captures current default output as fallback.
@@ -95,5 +85,4 @@ Keep machine environment variables on uninstall:
 
 ## Notes
 
-- This version polls HID state.
 - If endpoint names differ on your machine, set `TARGET_ENDPOINT_NAME`.
